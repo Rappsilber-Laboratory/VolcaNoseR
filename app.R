@@ -1226,7 +1226,8 @@ plot_data <- reactive({
           nudge_x = 0.2,
           nudge_y=0.2,
           box.padding = unit(0.9, "lines"),
-          point.padding = unit(.3+input$pointSize*0.1, "lines"),show.legend=F
+          point.padding = unit(.3+input$pointSize*0.1, "lines"),show.legend=F,
+          max.overlaps = Inf
           )
       
     }
