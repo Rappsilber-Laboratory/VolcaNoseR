@@ -10,7 +10,7 @@ o [https://huygens.science.uva.nl/VolcaNoseR/](https://huygens.science.uva.nl/Vo
 
 o [https://huygens.science.uva.nl/VolcaNoseR2/](https://huygens.science.uva.nl/VolcaNoseR2/)
 
-o [https://amsterdamstudygroup.shinyapps.io/VolcaNoseR/](https://amsterdamstudygroup.shinyapps.io/VolcaNoseR/)
+o [https://uva-nl.shinyapps.io/VolcaNoseR/](https://uva-nl.shinyapps.io/VolcaNoseR/)
 
 o [https://goedhart.shinyapps.io/VolcaNoseR/](https://goedhart.shinyapps.io/VolcaNoseR/), while bandwidth lasts
 
