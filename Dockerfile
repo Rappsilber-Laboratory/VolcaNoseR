@@ -18,7 +18,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install R packages
-# Install R packages and ensure they are all installed correctly
+# Ensure shared libraries are updated and force reinstall 'fs' to link against libuv
+RUN ldconfig && R -e "install.packages('fs', repos='https://cran.rstudio.com/')"
+
+# Install remaining R packages and ensure they are all installed correctly
 RUN R -e "pkgs <- c('tidyverse', 'ggrepel', 'DT', 'shinycssloaders', 'RCurl', 'readxl', 'ggiraph', 'htmlwidgets'); \
     install.packages(pkgs, repos='https://cran.rstudio.com/', Ncpus=parallel::detectCores()); \
     if (!all(pkgs %in% installed.packages())) stop('Some packages failed to install')"
