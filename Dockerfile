@@ -23,7 +23,7 @@ EXPOSE 3838
 # We just need to ensure the permissions are correct
 RUN chown -R shiny:shiny /srv/shiny-server/VolcaNoseR/
 
-# Optional: Set environment variables if needed
-# ENV SHINY_LOG_STDERR=1
+# Set environment variables to see logs in docker logs
+ENV SHINY_LOG_STDERR=1
 
 CMD ["/usr/bin/shiny-server"]
