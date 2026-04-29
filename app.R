@@ -19,8 +19,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# Allow files up to 10 Mb
-options(shiny.maxRequestSize=10*1024^2)
+# Allow files up to 500 Mb
+options(shiny.maxRequestSize=500*1024^2)
 
 #Load necessary packages
 
