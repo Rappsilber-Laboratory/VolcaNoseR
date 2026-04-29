@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  volcanoser:
+    build: .
+    image: volcanoser:latest
+    ports:
+      - "3838:3838"
+    volumes:
+      - .:/srv/shiny-server/VolcaNoseR/
+    restart: always
