@@ -32,6 +32,7 @@ library(DT)
 library(RCurl)
 library(ggiraph)
 library(htmlwidgets)
+library(readxl)
 
 source("themes.R")
 
