@@ -6,11 +6,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libcurl4-gnutls-dev \
     libxml2-dev \
     libssl-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libfribidi-dev \
+    libharfbuzz-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install R packages
-RUN R -e "install.packages(c('tidyverse', 'ggrepel', 'DT', 'shinycssloaders', 'RCurl', 'readxl', 'ggiraph', 'htmlwidgets'), repos='https://cran.rstudio.com/')"
+# Install R packages and ensure they are all installed correctly
+RUN R -e "pkgs <- c('tidyverse', 'ggrepel', 'DT', 'shinycssloaders', 'RCurl', 'readxl', 'ggiraph', 'htmlwidgets'); \
+    install.packages(pkgs, repos='https://cran.rstudio.com/', Ncpus=parallel::detectCores()); \
+    if (!all(pkgs %in% installed.packages())) stop('Some packages failed to install')"
 
 # Copy the app files into the image
 # Rocker/shiny looks for apps in /srv/shiny-server/
