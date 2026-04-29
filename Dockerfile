@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjpeg-dev \
     libpng-dev \
     libtiff-dev \
+    libuv1-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
